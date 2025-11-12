@@ -15,10 +15,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"), // optional, for clean imports
     },
-  },
-  server: {
-    proxy: {
-      "/api": "https://pharmacy-chat-server.vercel.app", // ✅ lets you call Express API locally
-    },
-  },
+  }
+  // server: {
+  //   proxy: {
+  //     "/api": "https://pharmacy-chat-server.vercel.app", // ✅ lets you call Express API locally
+  //   },
+  // },
 })

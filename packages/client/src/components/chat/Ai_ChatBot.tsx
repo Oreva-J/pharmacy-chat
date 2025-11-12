@@ -50,12 +50,12 @@ const Ai_Chatbot = () => {
   const onSubmit = async ({ prompt }: FormData) => {
     try {
     
-      setShowWelcome(false);
+    setShowWelcome(false);
     setIsBotTyping(true);
     setError("");
     setMessages(prev => [...prev, { content: prompt, role: "user", timestamp: new Date() }])
     popAudio.play();
-    const { data } = await axios.post<ChatResponse>("/api/chat", { prompt, conversationId: conversationId.current })
+    const { data } = await axios.post<ChatResponse>("https://pharmacy-chat-server.vercel.app/api/chat", { prompt, conversationId: conversationId.current })
     setMessages(prev => [...prev, { content: data.message, role: "bot", timestamp: new Date() }])
     notificationAudio.play();
     } catch (error) {
