@@ -1,0 +1,21 @@
+{
+  "name": "pharmacychat",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^9.2.1"
+  },"scripts": {
+    "dev": "bun run index.ts",
+    "build": "bun run --filter client build",
+    "build:all": "bun run --filter client build && bun run --filter server build"
+  },
+  
+   "workspaces": [
+    "packages/*"
+  ],
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module"
+}
