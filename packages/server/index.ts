@@ -1,6 +1,8 @@
 import express from 'express';
 import router from './routes/chatRoute.js';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import cors from "cors"
+
 
 dotenv.config()
 
@@ -8,6 +10,7 @@ const app = express();
 
 app.use(express.json())
 app.use(router)
+app.use(cors())
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
