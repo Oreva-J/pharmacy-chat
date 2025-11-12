@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "https://pharmacy-chat-server.vercel.app/", // ✅ lets you call Express API locally
+      "/api": "https://pharmacy-chat-server.vercel.app", // ✅ lets you call Express API locally
     },
   },
 })
